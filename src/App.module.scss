@@ -1,0 +1,58 @@
+.App {
+  display: flex;
+  height: 100vh;
+
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.board {
+  display: grid;
+  position: relative;
+  grid-template-rows: repeat(6, 1fr);
+  height: calc(100vh / 2);
+  width: calc(100vh / 2);
+  grid-gap: 5px;
+
+ .debugAnswer {
+  position: absolute;
+  top: -2rem;
+  left: 0;
+ }
+}
+
+.row {
+  display: grid;
+  
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 5px; 
+}
+
+.tile {
+  border: 2px solid #d3d6da;
+  aspect-ratio: 1/1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: bold;
+  color: white;
+
+  &.entered {
+    border: 2px solid #878a8c;
+    color: black;
+  }
+
+  &.present {
+    border: none;
+    background: 2px solid #c9b458;
+  }
+  &.correct {
+    border: none;
+    background: 2px solid #6aaa64;
+  }
+}
